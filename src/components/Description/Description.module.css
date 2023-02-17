@@ -1,0 +1,8 @@
+.descriptionContainer {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    width: 18rem;
+    font-size: 12px;
+    text-align: center;
+}
