@@ -1,0 +1,15 @@
+.picturesContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#pictures {
+  width: fit-content;
+}
+
+#smallNewBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

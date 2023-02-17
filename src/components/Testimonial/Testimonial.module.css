@@ -1,9 +1,10 @@
 .testimonialContainer {
     background-color: #319379;
-    height: 84px;
-    width: 18rem;
+    height: 80px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

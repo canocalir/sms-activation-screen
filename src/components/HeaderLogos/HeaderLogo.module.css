@@ -1,8 +1,8 @@
-.header_icons {
+.headerIcons {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5rem;
   width: 100%;
-  justify-content: center;
-  align-items:center;
-  margin: 0;
-  gap:4rem;
+  margin-bottom: 0.5rem;
 }

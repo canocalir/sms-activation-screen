@@ -1,15 +1,14 @@
 .typeButton {
-    width: 17rem;
-  height: 2.5rem;
-  border: none;
+  width: 100%;
+  max-width: 280px;
+  height: fit-content;
+  padding: 0.3rem;
   color: #ffffff;
   font-weight: 600;
   font-size: 22px;
   border-radius: 2rem;
-  stroke: black;
-  stroke-width: 2rem;
-  margin-top: 1rem;
-  background: rgb(250, 175, 66);
+  border: 6px solid #f0f0f0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;  background: rgb(250, 175, 66);
   background: linear-gradient(
     180deg,
     rgba(250, 175, 66, 1) 0%,
@@ -22,10 +21,11 @@
     rgba(240, 83, 57, 1) 100%
   );
   z-index: 1;
+  margin: 0;
 }
 
-.typeButton:hover{
-    background: rgb(250, 175, 66);
+.typeButton:hover {
+  background: rgb(250, 175, 66);
   background: linear-gradient(
     180deg,
     rgb(224, 158, 59) 0%,
@@ -37,6 +37,6 @@
     rgb(214, 88, 53) 34%,
     rgb(205, 73, 49) 100%
   );
-    transition: 300ms ease-in;
-    cursor: pointer;
+  transition: 300ms ease-in;
+  cursor: pointer;
 }

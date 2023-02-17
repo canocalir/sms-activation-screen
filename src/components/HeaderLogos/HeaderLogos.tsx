@@ -5,7 +5,7 @@ import style from "../HeaderLogos/HeaderLogo.module.css";
 
 const HeaderLogos = () => {
   return (
-    <div className={style.header_icons}>
+    <div className={style.headerIcons}>
       <img src={newLogo} alt="new_logo" />
       <img src={whatsAppLogo} height={"56px"} alt="new_logo" />
       <img src={laughLogo} height={"56px"} alt="new_logo" />
