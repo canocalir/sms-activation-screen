@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import style from "./App.module.css";
+import newLogo from "./assets/NEW.png";
+import whatsAppLogo from "./assets/whatsapp.png";
+import buttonsBackground from "./assets/cute_monster4.png";
+import moreLogos from "./assets/MORE.png"
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={style.main_container}>
+      <div className={style.content_container}>
+        <div className={style.header_icons}>
+          <img src={newLogo} alt="new_logo" />
+          <img src={whatsAppLogo} alt="new_logo" />
+          <img src={newLogo} alt="new_logo" />
+        </div>
+        <div className={style.backgroundContainer}>
+        <img src={buttonsBackground} alt="cute_back" />
+        </div>
+        <div className={style.selection_buttons}>
+          <p className={style.headingText}>
+            Express yourself with
+            <br/> 
+            <span id={style.boldText}>New</span>{" "}
+            <span id={style.colorText}>WhatsApp Stickers</span>
+          </p>
+          <p>Choose your sticker type:</p>
+          <button>Funny</button>
+          <button>Romance</button>
+        </div>
+        <div className={style.moreLogosContainer}>
+          <img src={moreLogos} alt="more-logos" />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
