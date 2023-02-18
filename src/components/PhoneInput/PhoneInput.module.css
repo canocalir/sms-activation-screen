@@ -1,0 +1,23 @@
+.phoneInput {
+  width: 100%;
+  max-width: 280px;
+  height: 2.5rem;
+  border-radius: 2rem;
+  background-color: #eaeaea;
+  border: 1px solid #707070;
+  padding-left: 4rem;
+  font-size: 1.2rem;
+}
+
+.phone{
+    position: absolute;
+    top: 0.5rem;
+    left: 3rem;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}

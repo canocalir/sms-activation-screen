@@ -1,9 +1,11 @@
-import style from "./Home.module.css";
+import style from "../../styles/page.module.css";
 import Button from "../../components/Button/Button";
 import cuteMonsterLogo from "../../assets/cute_monster3.png";
 import buttonsBackground from "../../assets/cute_monster4.png";
 import Pictures from "../../components/Pictures/Pictures";
 import Testimonial from "../../components/Testimonial/Testimonial";
+import Label from "../../components/Label/Label";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -16,12 +18,16 @@ const Home = () => {
         <p className={style.headingText}>
           Express yourself with
           <br />
-          <span id={style.boldText}>New</span>{" "}
+          <strong>New</strong>{" "}
           <span id={style.colorText}>WhatsApp Stickers</span>
         </p>
-        <p className={style.buttonLabel}>Choose your sticker type:</p>
-        <Button buttonStyle="Funny" />
-        <Button buttonStyle="Romance" />
+        <Label label={"Choose your sticker type:"} />
+        <Link className={style.Link} to={"/funny"}>
+          <Button buttonStyle="Funny" />
+        </Link>
+        <Link className={style.Link} to={"/romantic"}>
+          <Button buttonStyle="Romance" />
+        </Link>
       </div>
       <Pictures />
       <Testimonial />

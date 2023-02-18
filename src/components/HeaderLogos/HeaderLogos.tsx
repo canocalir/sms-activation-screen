@@ -7,8 +7,8 @@ const HeaderLogos = () => {
   return (
     <div className={style.headerIcons}>
       <img src={newLogo} alt="new_logo" />
-      <img src={whatsAppLogo} height={"56px"} alt="new_logo" />
-      <img src={laughLogo} height={"56px"} alt="new_logo" />
+      <img src={whatsAppLogo} alt="whatsapp_logo" />
+      <img src={laughLogo} alt="laugh_logo" />
     </div>
   );
 };

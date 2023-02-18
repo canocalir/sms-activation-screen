@@ -5,6 +5,7 @@
   height: 100%;
   position: relative;
   margin-top: 2rem;
+  width: 100vw
 }
 
 .content_container {
@@ -13,10 +14,14 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding-bottom: 2rem;
-  width: 100%;
+  padding: 0.5rem 0.5rem 2rem 0.5rem;
+  background-image: url(./assets/back_circles.png);
+  background-repeat: no-repeat;
+  background-size: 36rem;
+  background-position: top center;
+  min-width: 21rem;
   gap: 0.5rem;
-  max-width: fit-content;
+  background-color: #59bba6;
   @media (max-width: 864px) {
     width: 100%;
   }
