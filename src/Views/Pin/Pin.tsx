@@ -5,7 +5,11 @@ import Pictures from "../../components/Pictures/Pictures";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import style from "../../styles/page.module.css";
 import { useMachine, normalizeProps } from "@zag-js/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../app/hooks";
+import { SyntheticEvent, useEffect } from "react";
+import { pinError } from "../../helpers/toastError";
+import { pinSuccess } from "../../helpers/toastSuccess";
 
 const Pin = () => {
   const [state, send] = useMachine(
@@ -15,7 +19,15 @@ const Pin = () => {
     })
   );
   const api = pinInput.connect(state, send, normalizeProps);
+  const { pin } = useAppSelector((state) => state.pin);
+  const navigate = useNavigate();
   console.log(api.valueAsString);
+
+  const pinCodeCheckerHandler = (e: SyntheticEvent) => {
+    e.preventDefault();
+    api.valueAsString === pin?.pin && pin ? navigate("/thanks") : pinError();
+  };
+
   return (
     <>
       <img className={style.behindMonster} src={behindMonster} />
@@ -26,27 +38,31 @@ const Pin = () => {
           <br />
           please enter it below to confirm subscription!
         </p>
-        <div className={style.pinContainer} {...api.rootProps}>
-          <input
-            className={style.pinInput}
-            {...api.getInputProps({ index: 0 })}
-          />
-          <input
-            className={style.pinInput}
-            {...api.getInputProps({ index: 1 })}
-          />
-          <input
-            className={style.pinInput}
-            {...api.getInputProps({ index: 2 })}
-          />
-          <input
-            className={style.pinInput}
-            {...api.getInputProps({ index: 3 })}
-          />
-        </div>
-        <Link className={style.Link} to={"/thanks"}>
+        <form onSubmit={pinCodeCheckerHandler} className={style.numberForm}>
+          <div className={style.pinContainer} {...api.rootProps}>
+            <input
+              className={style.pinInput}
+              required
+              {...api.getInputProps({ index: 0 })}
+            />
+            <input
+              className={style.pinInput}
+              required
+              {...api.getInputProps({ index: 1 })}
+            />
+            <input
+              className={style.pinInput}
+              required
+              {...api.getInputProps({ index: 2 })}
+            />
+            <input
+              className={style.pinInput}
+              required
+              {...api.getInputProps({ index: 3 })}
+            />
+          </div>
           <Button buttonStyle="Confirm" />
-        </Link>
+        </form>
       </div>
       <Pictures />
       <Testimonial />

@@ -5,7 +5,14 @@ type ButtonProps = {
 };
 
 const Button = ({ buttonStyle }: ButtonProps) => {
-  return <button className={style.typeButton}>{buttonStyle}</button>;
+  return (
+    <button
+      type="submit"
+      className={style.typeButton}
+    >
+      {buttonStyle}
+    </button>
+  );
 };
 
 export default Button;
