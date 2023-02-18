@@ -1,5 +1,5 @@
 import style from "../Testimonial/Testimonial.module.css";
-import testimonial from "../../assets/testimonial.png";
+import testimonial from "../../assets/TESTIMONIAL.png";
 import star from "../../assets/star.png";
 
 const Testimonial = () => {
