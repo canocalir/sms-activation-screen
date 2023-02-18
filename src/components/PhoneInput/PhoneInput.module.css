@@ -9,15 +9,15 @@
   font-size: 1.2rem;
 }
 
-.phone{
-    position: absolute;
-    top: 0.5rem;
-    left: 3rem;
+.phone {
+  position: absolute;
+  top: 0.5rem;
+  left: 3rem;
 }
 
 .inputContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
 }

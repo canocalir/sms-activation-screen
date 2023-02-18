@@ -1,4 +1,4 @@
-import style from "../../styles/page.module.css";
+import style from "../../styles/global.module.css";
 import Button from "../../components/Button/Button";
 import cuteMonsterLogo from "../../assets/cute_monster3.png";
 import buttonsBackground from "../../assets/cute_monster4.png";

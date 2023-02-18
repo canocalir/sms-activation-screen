@@ -1,4 +1,4 @@
-import style from "../../styles/page.module.css";
+import style from "../../styles/global.module.css";
 
 type Label = {
   label: string;

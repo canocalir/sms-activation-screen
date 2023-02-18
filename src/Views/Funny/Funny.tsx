@@ -1,4 +1,4 @@
-import style from "../../styles/page.module.css";
+import style from "../../styles/global.module.css";
 import funnyMonster from "../../assets/cute_monster5.png";
 import Pictures from "../../components/Pictures/Pictures";
 import Testimonial from "../../components/Testimonial/Testimonial";
@@ -24,7 +24,7 @@ const Funny = () => {
     dispatch(getPinResponse(data));
   };
   console.log(pin);
-  
+
   useEffect(() => {
     pin?.success && navigate("/pinscreen");
   }, [pin]);

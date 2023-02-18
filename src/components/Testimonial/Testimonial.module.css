@@ -3,8 +3,22 @@
     height: 80px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border: none;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.testimonialMiddle{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.testimonialParagraph{
+    font-size: 14px;
+}
+
+.testimonialName{
+    font-weight: 600;
 }

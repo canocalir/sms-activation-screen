@@ -3,13 +3,11 @@ import behindMonster from "../../assets/cute_monster6.png";
 import Button from "../../components/Button/Button";
 import Pictures from "../../components/Pictures/Pictures";
 import Testimonial from "../../components/Testimonial/Testimonial";
-import style from "../../styles/page.module.css";
+import style from "../../styles/global.module.css";
 import { useMachine, normalizeProps } from "@zag-js/react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { SyntheticEvent, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { SyntheticEvent } from "react";
 import { pinError } from "../../helpers/toastError";
-import { pinSuccess } from "../../helpers/toastSuccess";
 
 const Pin = () => {
   const [state, send] = useMachine(
@@ -19,13 +17,18 @@ const Pin = () => {
     })
   );
   const api = pinInput.connect(state, send, normalizeProps);
-  const { pin } = useAppSelector((state) => state.pin);
   const navigate = useNavigate();
-  console.log(api.valueAsString);
 
-  const pinCodeCheckerHandler = (e: SyntheticEvent) => {
+  const pinCodeCheckerHandler = async (e: SyntheticEvent) => {
     e.preventDefault();
-    api.valueAsString === pin?.pin && pin ? navigate("/thanks") : pinError();
+    try {
+      const url = `https://easy-tan-cormorant-hose.cyclic.app/https://75j6v3-8080.preview.csb.app/api/v1/verify-pin?pin=${api.valueAsString}&user_id=1`;
+      const res = await fetch(url);
+      const data = await res.json();
+      data?.success && navigate("/thanks");
+    } catch (error) {
+      error && pinError();
+    }
   };
 
   return (

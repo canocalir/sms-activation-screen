@@ -1,0 +1,128 @@
+.selection_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  gap: 0.5rem;
+  width: 90%;
+}
+
+.Link {
+  text-align: center;
+  width: 90%;
+}
+
+.cuteMonster {
+  position: absolute;
+  top: 1.8rem;
+  left: 50%;
+  transform: translate(-100%, 0%);
+  z-index: 1;
+  height: 6.5rem;
+}
+
+.buttonLabel {
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 70%;
+}
+
+.pinLabel {
+  margin-top: 0.5rem;
+  text-align: center;
+  line-height: 17px;
+}
+
+.headingText {
+  font-size: 18px;
+  text-align: center;
+}
+
+#colorText {
+  color: #59bba6;
+  font-weight: 600;
+}
+
+.backgroundContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.backgroundContainer img {
+  width: 100%;
+  margin-top: -3rem;
+}
+
+.eventContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  height: 256px;
+  margin-top: 5rem;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  z-index: 1;
+}
+
+.numberForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.middleMonster {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 35%);
+  height: 10rem;
+}
+
+.behindMonster {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translate(-50%, 35%);
+  height: 10rem;
+  z-index: 0;
+}
+
+.monsterRight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 10rem;
+  z-index: 2;
+}
+
+.phonePageHeading {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.pinInput {
+  width: 45px;
+  height: 45px;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+.pinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
