@@ -18,5 +18,5 @@ export const phoneSlice = createSlice({
   },
 });
 
-export const {setPhoneNumber} = phoneSlice.actions;
+export const { setPhoneNumber } = phoneSlice.actions;
 export default phoneSlice.reducer;

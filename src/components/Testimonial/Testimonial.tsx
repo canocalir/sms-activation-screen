@@ -1,8 +1,9 @@
 import style from "../Testimonial/Testimonial.module.css";
 import testimonial from "../../assets/TESTIMONIAL.png";
 import star from "../../assets/star.png";
+import { FC } from "react";
 
-const Testimonial = () => {
+const Testimonial: FC = () => {
   return (
     <div className={style.testimonialContainer}>
       <img src={testimonial} alt="profile-logo" />

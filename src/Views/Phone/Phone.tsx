@@ -5,7 +5,7 @@ import Pictures from "../../components/Pictures/Pictures";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import romanticMonster from "../../assets/cute_monster8.png";
 import funnyMonster from "../../assets/cute_monster5.png";
-import shadow from "../../assets/shadow.png"
+import shadow from "../../assets/shadow.png";
 import style from "../../styles/global.module.css";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { SyntheticEvent, useEffect, useState } from "react";
@@ -41,13 +41,13 @@ const Phone = () => {
   };
 
   const conditionalHeading = () => {
-    switch(location.pathname){
+    switch (location.pathname) {
       case "/romantic":
-        return "You're so romantics"
+        return "You're so romantics";
       case "/funny":
-        return "You've got good sense of humor"  
+        return "You've got good sense of humor";
     }
-  }
+  };
 
   useEffect(() => {
     pin?.success && navigate("/pinscreen");
@@ -61,10 +61,8 @@ const Phone = () => {
         ) : (
           <>
             <img className={style.middleMonster} src={conditionalLogo()} />
-            <img className={style.monsterShadow} src={shadow}/>
-            <p className={style.phonePageHeading}>
-              {conditionalHeading()}
-            </p>
+            <img className={style.monsterShadow} src={shadow} />
+            <p className={style.phonePageHeading}>{conditionalHeading()}</p>
             <Label label="Enter your number to get all the sticker packs" />
             <form onSubmit={fetchPhoneResponse} className={style.numberForm}>
               <PhoneInput />

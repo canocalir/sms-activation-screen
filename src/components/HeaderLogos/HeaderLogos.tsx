@@ -2,8 +2,9 @@ import newLogo from "../../assets/NEW.png";
 import whatsAppLogo from "../../assets/whatsapp.png";
 import laughLogo from "../../assets/laugh.png"
 import style from "../HeaderLogos/HeaderLogo.module.css";
+import { FC } from "react";
 
-const HeaderLogos = () => {
+const HeaderLogos:FC = () => {
   return (
     <div className={style.headerIcons}>
       <img src={newLogo} alt="new_logo" />

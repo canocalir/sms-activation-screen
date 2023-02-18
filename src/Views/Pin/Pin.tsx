@@ -21,9 +21,9 @@ const Pin = () => {
   const pinCodeCheckerHandler = async (e: SyntheticEvent) => {
     e.preventDefault();
     const url = `https://easy-tan-cormorant-hose.cyclic.app/https://75j6v3-8080.preview.csb.app/api/v1/verify-pin?pin=${api.valueAsString}&user_id=1`;
-      const res = await fetch(url);
-      const data = await res.json();
-      data?.success ? navigate("/thanks") : pinError();
+    const res = await fetch(url);
+    const data = await res.json();
+    data?.success ? navigate("/thanks") : pinError();
   };
 
   return (
