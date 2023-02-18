@@ -68,7 +68,6 @@
   margin-top: 5rem;
   flex-direction: column;
   gap: 0.6rem;
-  padding-top: 1.5rem;
   z-index: 1;
 }
 
@@ -86,7 +85,7 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, 35%);
-  height: 10rem;
+  height: 9.2rem;
 }
 
 .behindMonster {
