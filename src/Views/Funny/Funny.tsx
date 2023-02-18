@@ -6,11 +6,13 @@ import Label from "../../components/Label/Label";
 import Button from "../../components/Button/Button";
 import PhoneInput from "../../components/PhoneInput/PhoneInput";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { SyntheticEvent, useEffect } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getPinResponse } from "../../features/pinSlice";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Funny = () => {
+  const [loading, setLoading] = useState<boolean>(false);
   const { phoneNumber } = useAppSelector((state) => state.phone);
   const { pin } = useAppSelector((state) => state.pin);
   const navigate = useNavigate();
@@ -18,12 +20,13 @@ const Funny = () => {
 
   const fetchPhoneResponse = async (e: SyntheticEvent) => {
     e.preventDefault();
+    setLoading(true);
     const url = `https://easy-tan-cormorant-hose.cyclic.app/https://75j6v3-8080.preview.csb.app/api/v1/trigger-pin?msisdn=${phoneNumber}&user_id=1`;
     const res = await fetch(url);
     const data = await res.json();
     dispatch(getPinResponse(data));
+    setLoading(false);
   };
-  console.log(pin);
 
   useEffect(() => {
     pin?.success && navigate("/pinscreen");
@@ -32,15 +35,22 @@ const Funny = () => {
   return (
     <>
       <div className={style.eventContainer}>
-        <img className={style.middleMonster} src={funnyMonster} />
-        <p className={style.phonePageHeading}>You've got good sense of humor</p>
-        <Label label="Enter your number to get all the sticker packs" />
-        <form onSubmit={fetchPhoneResponse} className={style.numberForm}>
-          <PhoneInput />
-          <Button buttonStyle="Submit to Subscribe" />
-        </form>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <>
+            <img className={style.middleMonster} src={funnyMonster} />
+            <p className={style.phonePageHeading}>
+              You've got good sense of humor
+            </p>
+            <Label label="Enter your number to get all the sticker packs" />
+            <form onSubmit={fetchPhoneResponse} className={style.numberForm}>
+              <PhoneInput />
+              <Button buttonStyle="Submit to Subscribe" />
+            </form>
+          </>
+        )}
       </div>
-
       <Pictures />
       <Testimonial />
     </>

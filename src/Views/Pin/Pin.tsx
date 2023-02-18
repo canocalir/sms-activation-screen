@@ -8,7 +8,6 @@ import { useMachine, normalizeProps } from "@zag-js/react";
 import { useNavigate } from "react-router-dom";
 import { SyntheticEvent } from "react";
 import { pinError } from "../../helpers/toastError";
-
 const Pin = () => {
   const [state, send] = useMachine(
     pinInput.machine({
@@ -21,14 +20,10 @@ const Pin = () => {
 
   const pinCodeCheckerHandler = async (e: SyntheticEvent) => {
     e.preventDefault();
-    try {
-      const url = `https://easy-tan-cormorant-hose.cyclic.app/https://75j6v3-8080.preview.csb.app/api/v1/verify-pin?pin=${api.valueAsString}&user_id=1`;
+    const url = `https://easy-tan-cormorant-hose.cyclic.app/https://75j6v3-8080.preview.csb.app/api/v1/verify-pin?pin=${api.valueAsString}&user_id=1`;
       const res = await fetch(url);
       const data = await res.json();
-      data?.success && navigate("/thanks");
-    } catch (error) {
-      error && pinError();
-    }
+      data?.success ? navigate("/thanks") : pinError();
   };
 
   return (
