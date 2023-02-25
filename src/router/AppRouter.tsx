@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../Views/Home/Home";
-import Pin from "../Views/Pin/Pin";
-import Thanks from "../Views/Thanks/Thanks";
-import Phone from "../Views/Phone/Phone";
+import Home from "../views/Home/Home";
+import Pin from "../views/Pin/Pin";
+import Thanks from "../views/Thanks/Thanks";
+import Phone from "../views/Phone/Phone";
 
 const AppRouter = () => {
   return (
